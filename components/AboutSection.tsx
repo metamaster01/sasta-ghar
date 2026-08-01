@@ -49,7 +49,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white"
+      className="relative w-full py-12 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div

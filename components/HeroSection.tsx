@@ -265,9 +265,9 @@ export default function HeroSection() {
       {/* ── End Carousel ── */}
 
       {/* ── Title + Stats ── */}
-      <div ref={titleRef} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12">
+      <div ref={titleRef} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <motion.div
-          className="text-center mb-10"
+          className="text-center"
           initial="hidden"
           animate={titleInView ? "visible" : "hidden"}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
@@ -288,7 +288,7 @@ export default function HeroSection() {
           </motion.h2>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4"
           initial="hidden"
           animate={titleInView ? "visible" : "hidden"}
@@ -306,7 +306,7 @@ export default function HeroSection() {
               <div className="text-gray-500 text-xs sm:text-sm">{s.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
