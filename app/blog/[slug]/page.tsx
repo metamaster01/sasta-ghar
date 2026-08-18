@@ -8,6 +8,7 @@ import Link                          from "next/link";
 import Image                         from "next/image";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import BlogShareButtons              from "@/components/blog/BlogShareButtons";
+import BlogContent from "@/components/blog/BlogContent";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -110,8 +111,20 @@ function formatDate(d: string | null) {
   });
 }
 
+// function readTime(content: string | null) {
+//   const words = (content ?? "").replace(/<[^>]+>/g, "").split(/\s+/).length;
+//   return `${Math.max(2, Math.ceil(words / 200))} min read`;
+// }
+
+
 function readTime(content: string | null) {
-  const words = (content ?? "").replace(/<[^>]+>/g, "").split(/\s+/).length;
+  const plain = (content ?? "")
+    .replace(/```[\s\S]*?```/g, "")     // code blocks
+    .replace(/!\[.*?\]\(.*?\)/g, "")    // images
+    .replace(/\[.*?\]\(.*?\)/g, "")     // links
+    .replace(/[#>*_`~-]/g, "")          // markdown symbols
+    .trim();
+  const words = plain.split(/\s+/).filter(Boolean).length;
   return `${Math.max(2, Math.ceil(words / 200))} min read`;
 }
 
@@ -271,7 +284,7 @@ export default async function BlogDetailPage({ params }: Props) {
               )}
 
               {/* ── Article content ─────────────────────────── */}
-              {post.content ? (
+              {/* {post.content ? (
                 <div
                   className="prose prose-sm sm:prose max-w-none
                     prose-headings:font-bold prose-headings:text-gray-900
@@ -290,7 +303,11 @@ export default async function BlogDetailPage({ params }: Props) {
                 />
               ) : (
                 <p className="text-gray-400 italic">Article content coming soon.</p>
-              )}
+              )} */}
+
+
+              // ── Article content ─────────────────────────── 
+              <BlogContent content={post.content ?? ""} />
 
               {/* Tags */}
               {post.tags && post.tags.length > 0 && (
