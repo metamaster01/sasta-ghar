@@ -9,7 +9,8 @@ import HeroSection from "@/components/HeroSection";
 import WhyChooseSastaghar from "@/components/WhyChooseSastaghar";
 import PropertyGallery from "@/components/PropertyGallery";
 import FeaturedProperties from "@/components/FeaturedProperties";
-import BlogPreview from "@/components/property/BlogPreview";
+import BlogPreview from "@/components/BlogPreview";
+import PopularCities from "@/components/PopularCities";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ── Fetch featured properties (server-side) ──────────────────
@@ -48,6 +49,7 @@ export default async function page() {
       {/* <Navbar /> */}
       <HeroSection />
       <FeaturedProperties />
+      <PopularCities />
       <AboutSection />
       <AdvertisementSection />
       <WhyChooseSastaghar />
