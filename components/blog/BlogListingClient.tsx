@@ -127,7 +127,7 @@ function BlogCard({
                 )}
               </div>
               <span className="text-gray-500 text-[10px] font-medium">
-                {post.profiles?.full_name ?? "Sastaghar Team"}
+                {post.profiles?.full_name ?? "PropertyLink Team"}
               </span>
             </div>
             <span className="flex items-center gap-1 text-[#1B4FD8] text-[10px] font-semibold group-hover:gap-1.5 transition-all">

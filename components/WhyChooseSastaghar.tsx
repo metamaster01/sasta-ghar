@@ -99,14 +99,14 @@ export default function WhyChooseSastaghar() {
             variants={headingVariants}
             className="text-[#2EAE88] text-xs font-bold tracking-[0.22em] uppercase mb-3"
           >
-            Why Sastaghar
+            Why PropertyLink
           </motion.p>
 
           <motion.h2
             variants={headingVariants}
             className="text-gray-900 text-3xl sm:text-4xl lg:text-[2.6rem] font-bold leading-tight tracking-tight mb-4"
           >
-            Why Choose Sastaghar
+            Why Choose PropertyLink
           </motion.h2>
 
           <motion.p

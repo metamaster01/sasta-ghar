@@ -11,14 +11,14 @@ import NewsletterSection from "@/components/NewsletterSection";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title:       "Contact Us — Sastaghar",
+  title:       "Contact Us — PropertyLink",
   description:
-    "Get in touch with the Sastaghar team for property inquiries, home loan assistance, or any questions. We respond within 24 hours.",
+    "Get in touch with the PropertyLink team for property inquiries, home loan assistance, or any questions. We respond within 24 hours.",
   openGraph: {
-    title:       "Contact Sastaghar",
+    title:       "Contact PropertyLink",
     description: "Reach out to our property experts. We're here to help you find your dream home.",
-    url:         "https://sastaghar.com/contact",
-    siteName:    "Sastaghar",
+    url:         "https://propertylink.com/contact",
+    siteName:    "PropertyLink",
     type:        "website",
   },
 };

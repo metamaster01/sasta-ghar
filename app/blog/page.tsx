@@ -10,11 +10,11 @@ import BlogListingClient             from "@/components/blog/BlogListingClient";
 
 export const metadata: Metadata = {
   title:       "Property Blog — Buying Guides, Loan Tips & Locality Spotlights",
-  description: "Expert guides on buying property, home loans, legal checks and Mumbai neighbourhood spotlights. Powered by Sastaghar.",
+  description: "Expert guides on buying property, home loans, legal checks and Mumbai neighbourhood spotlights. Powered by PropertyLink.",
   openGraph: {
-    title:       "Sastaghar Blog — Property Guides & Home Loan Tips",
-    description: "Expert real estate guides, locality spotlights, and home loan advice from Sastaghar.",
-    images:      [{ url: "/og-image.png" }],
+    title:       "PropertyLink Blog — Property Guides & Home Loan Tips",
+    description: "Expert real estate guides, locality spotlights, and home loan advice from PropertyLink.",
+    images:      [{ url: "/logo-new.png" }],
   },
 };
 
@@ -137,7 +137,7 @@ export default async function BlogPage() {
                     </div>
                     <div>
                       <p className="text-gray-700 text-xs font-semibold">
-                        {(featured as any).profiles?.full_name ?? "Sastaghar Team"}
+                        {(featured as any).profiles?.full_name ?? "PropertyLink Team"}
                       </p>
                       <p className="text-gray-400 text-[10px]">
                         {formatDate((featured as any).published_at)}

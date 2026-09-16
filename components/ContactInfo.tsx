@@ -35,8 +35,8 @@ const CONTACT_DETAILS = [
       </svg>
     ),
     label:   "Email",
-    value:   "contact@sastaghar.com",
-    href:    "mailto:contact@sastaghar.com",
+    value:   "contact@propertylink.com",
+    href:    "mailto:contact@propertylink.com",
     isLink:  true,
   },
   {
@@ -54,7 +54,7 @@ const CONTACT_DETAILS = [
 const SOCIAL_LINKS = [
   {
     name:  "Twitter / X",
-    href:  "https://twitter.com/sastaghar",
+    href:  "https://twitter.com/propertylink",
     color: "#1DA1F2",
     icon:  (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -64,7 +64,7 @@ const SOCIAL_LINKS = [
   },
   {
     name:  "Facebook",
-    href:  "https://facebook.com/sastaghar",
+    href:  "https://facebook.com/propertylink",
     color: "#1877F2",
     icon:  (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -74,7 +74,7 @@ const SOCIAL_LINKS = [
   },
   {
     name:  "Instagram",
-    href:  "https://instagram.com/sastaghar",
+    href:  "https://instagram.com/propertylink",
     color: "#E1306C",
     icon:  (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -84,7 +84,7 @@ const SOCIAL_LINKS = [
   },
   {
     name:  "YouTube",
-    href:  "https://youtube.com/@sastaghar",
+    href:  "https://youtube.com/@propertylink",
     color: "#FF0000",
     icon:  (
       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -217,7 +217,7 @@ export default function ContactInfo() {
           >
             <iframe
               src={MAP_SRC}
-              title="Sastaghar Office Location — Kandivali West, Mumbai"
+              title="PropertyLink Office Location — Kandivali West, Mumbai"
               width="100%"
               height="100%"
               style={{ border: 0, display: "block", minHeight: "360px" }}

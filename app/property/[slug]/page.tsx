@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!p) {
     return {
-      title:       "Property Not Found — Sastaghar",
+      title:       "Property Not Found — PropertyLink",
       description: "The property you are looking for could not be found.",
     };
   }
@@ -105,8 +105,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url:      `https://sastaghar.com/property/${slug}`,
-      siteName: "Sastaghar",
+      url:      `https://propertylink.com/property/${slug}`,
+      siteName: "PropertyLink",
       type:     "website",
       images: [{
         url:    ogImage,
@@ -123,7 +123,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     // Structured data hint for search engines
     alternates: {
-      canonical: `https://sastaghar.com/property/${slug}`,
+      canonical: `https://propertylink.com/property/${slug}`,
     },
   };
 }
@@ -163,7 +163,7 @@ function PropertyStructuredData({ p, cityName, localityName, ogImage }: {
     "@type":       "RealEstateListing",
     "name":        p.title,
     "description": p.description ?? "",
-    "url":         `https://sastaghar.com/property/${p.slug}`,
+    "url":         `https://propertylink.com/property/${p.slug}`,
     "image":       ogImage,
     "offers": {
       "@type":         "Offer",

@@ -141,7 +141,7 @@ export default function PropertyAgentCard({
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
             </svg>
             <div>
-              <p className="text-[#2EAE88] font-semibold text-xs">Sastaghar Verified</p>
+              <p className="text-[#2EAE88] font-semibold text-xs">PropertyLink Verified</p>
               <p className="text-gray-500 text-[10px] leading-relaxed mt-0.5">
                 This agent is verified with a RERA certificate and ID proof.
               </p>
@@ -170,7 +170,7 @@ export default function PropertyAgentCard({
           {/* WhatsApp */}
           {phone && (
             <a
-              href={`https://wa.me/${phone.replace(/\D/g, "")}?text=Hi, I'm interested in this property on Sastaghar.`}
+              href={`https://wa.me/${phone.replace(/\D/g, "")}?text=Hi, I'm interested in this property on PropertyLink.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1.5 border border-gray-200 text-gray-700 hover:border-[#25D366] hover:text-[#25D366] font-medium text-xs py-2.5 rounded-xl transition-colors"
@@ -187,7 +187,7 @@ export default function PropertyAgentCard({
           {/* Email */}
           {agent.email && (
             <a
-              href={`mailto:${agent.email}?subject=Property Enquiry from Sastaghar`}
+              href={`mailto:${agent.email}?subject=Property Enquiry from PropertyLink`}
               className="flex items-center justify-center gap-1.5 border border-gray-200 text-gray-700 hover:border-[#1B4FD8] hover:text-[#1B4FD8] font-medium text-xs py-2.5 rounded-xl transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

@@ -168,6 +168,7 @@ export default function PropertyGallery() {
             transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <button
+              onClick={() => { window.location.href = "/search"; }}
               className="inline-flex items-center gap-2 bg-[#1B4FD8] hover:bg-[#1640b8] active:scale-95 text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-blue-500/20"
             >
               View All Properties

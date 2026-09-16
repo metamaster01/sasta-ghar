@@ -413,27 +413,36 @@ export type Database = {
       }
       cities: {
         Row: {
+          cover_image_url: string | null
           created_at: string
           id: string
           is_active: boolean
+          lat: number | null
+          lng: number | null
           name: string
           slug: string
           sort_order: number
           state: string
         }
         Insert: {
+          cover_image_url?: string | null
           created_at?: string
           id?: string
           is_active?: boolean
+          lat?: number | null
+          lng?: number | null
           name: string
           slug: string
           sort_order?: number
           state: string
         }
         Update: {
+          cover_image_url?: string | null
           created_at?: string
           id?: string
           is_active?: boolean
+          lat?: number | null
+          lng?: number | null
           name?: string
           slug?: string
           sort_order?: number
@@ -917,6 +926,7 @@ export type Database = {
           lng: number | null
           name: string
           slug: string
+          sort_order: number | null
         }
         Insert: {
           city_id: string
@@ -927,6 +937,7 @@ export type Database = {
           lng?: number | null
           name: string
           slug: string
+          sort_order?: number | null
         }
         Update: {
           city_id?: string
@@ -937,6 +948,7 @@ export type Database = {
           lng?: number | null
           name?: string
           slug?: string
+          sort_order?: number | null
         }
         Relationships: [
           {
@@ -2142,6 +2154,10 @@ export type Database = {
       }
     }
     Functions: {
+      can_agent_publish_listing: {
+        Args: { p_agent_user_id: string }
+        Returns: Json
+      }
       check_and_downgrade_plans: { Args: never; Returns: undefined }
       complete_onboarding_step1: {
         Args: {
@@ -2178,10 +2194,73 @@ export type Database = {
         Args: never
         Returns: Database["public"]["Enums"]["user_role"]
       }
+      increment_converted_leads: {
+        Args: { p_agent_user_id: string }
+        Returns: undefined
+      }
+      increment_property_views: {
+        Args: { p_property_id: string }
+        Returns: undefined
+      }
       is_admin: { Args: never; Returns: boolean }
       is_agent_or_builder: { Args: never; Returns: boolean }
       match_search_alerts: { Args: never; Returns: undefined }
       reset_monthly_free_leads: { Args: never; Returns: undefined }
+      search_cities: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          id: string
+          lat: number
+          lng: number
+          name: string
+          slug: string
+          state: string
+        }[]
+      }
+      search_localities: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          city_name: string
+          id: string
+          lat: number
+          lng: number
+          name: string
+          slug: string
+        }[]
+      }
+      search_nearby_properties: {
+        Args: {
+          p_category?: string
+          p_lat: number
+          p_limit?: number
+          p_lng: number
+          p_offset?: number
+          p_radius_km?: number
+        }
+        Returns: {
+          area_unit: string
+          bathrooms: number
+          bedrooms: number
+          carpet_area: number
+          category: string
+          city_name: string
+          cover_image_url: string
+          distance_km: number
+          id: string
+          is_exclusive: boolean
+          is_featured: boolean
+          is_premium: boolean
+          is_verified: boolean
+          lat: number
+          lng: number
+          locality_name: string
+          price: number
+          price_unit: string
+          slug: string
+          title: string
+          total_count: number
+        }[]
+      }
       search_properties: {
         Args: {
           p_amenity_ids?: string[]
@@ -2436,12 +2515,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2465,11 +2544,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2490,11 +2569,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2515,11 +2594,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -2532,11 +2611,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }

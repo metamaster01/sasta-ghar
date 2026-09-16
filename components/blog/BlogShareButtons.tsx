@@ -13,7 +13,7 @@ export default function BlogShareButtons({
   slug:  string;
 }) {
   const [copied, setCopied] = useState(false);
-  const url = `https://sastaghar.com/blog/${slug}`;
+  const url = `https://propertylink.com/blog/${slug}`;
 
   async function copyLink() {
     try {

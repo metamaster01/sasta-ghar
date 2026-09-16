@@ -617,7 +617,7 @@ export function OnboardingCompletePage() {
 
         <h1 className="text-2xl font-bold text-gray-900 mb-2">You're all set! 🎉</h1>
         <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-          Your Sastaghar agent account is ready. Post your first property and start getting leads today.
+          Your PropertyLink agent account is ready. Post your first property and start getting leads today.
         </p>
 
         <div className="flex flex-col gap-3">

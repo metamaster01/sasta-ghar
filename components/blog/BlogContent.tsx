@@ -92,7 +92,7 @@ export default function BlogContent({ content }: { content: string }) {
           hr: () => <hr className="my-10 border-gray-100" />,
 
           img: ({ src, alt }) => {
-            if (!src) return null;
+            if (typeof src !== "string" || !src) return null;
             return (
               <span className="block my-8">
                 <span className="relative block w-full aspect-video rounded-2xl overflow-hidden bg-gray-100">

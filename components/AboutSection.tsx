@@ -65,7 +65,7 @@ export default function AboutSection() {
           >
             <Image
               src="/about-image.png"
-              alt="Sastaghar property - luxury residential complex with pool and greenery"
+              alt="PropertyLink property - luxury residential complex with pool and greenery"
               fill
               className="object-cover"
               priority
@@ -95,14 +95,14 @@ export default function AboutSection() {
               className="text-white text-2xl sm:text-3xl font-bold mb-4 leading-tight tracking-tight"
               variants={fadeUp}
             >
-              About Sastaghar
+              About PropertyLink
             </motion.h2>
 
             <motion.p
               className="text-blue-100 text-sm sm:text-base leading-relaxed mb-7 font-light"
               variants={fadeUp}
             >
-              At sastaghar, we believe finding your perfect home should be
+              At PropertyLink, we believe finding your perfect home should be
               simple, transparent, and stress-free. With a growing network of
               verified listings and trusted agents across India, we help people
               buy, sell, and rent properties with confidence.
@@ -110,7 +110,7 @@ export default function AboutSection() {
 
             <motion.div variants={fadeUp}>
               <Link
-                href="/properties"
+                href="/search"
                 className="
                   inline-flex items-center gap-2
                   border-2 border-white/80 text-white

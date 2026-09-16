@@ -95,8 +95,8 @@ export async function POST(req: NextRequest) {
 
   // ── 2. Send email via Resend ─────────────────────────────
   const RESEND_API_KEY   = process.env.RESEND_API_KEY;
-  const ADMIN_EMAIL      = process.env.ADMIN_CONTACT_EMAIL ?? "contact@sastaghar.com";
-  const FROM_EMAIL       = process.env.RESEND_FROM_EMAIL  ?? "noreply@sastaghar.com";
+  const ADMIN_EMAIL      = process.env.ADMIN_CONTACT_EMAIL ?? "v.miracle2008@gmail.com";
+  const FROM_EMAIL       = process.env.RESEND_FROM_EMAIL  ?? "noreply@propertylink.com";
 
   if (!RESEND_API_KEY) {
     // Don't fail the request if Resend isn't configured yet
@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
         <div class="wrapper">
           <div class="header">
             <h1>New Contact Inquiry</h1>
-            <p>Received via Sastaghar.com contact form</p>
+            <p>Received via PropertyLink.com contact form</p>
           </div>
           <div class="body">
             <span class="badge">New Message</span>
@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
             </div>
           </div>
           <div class="footer">
-            Sastaghar.com &nbsp;·&nbsp; Vindhya Enterprises LLP &nbsp;·&nbsp;
+            PropertyLink.com &nbsp;·&nbsp; Vindhya Enterprises LLP &nbsp;·&nbsp;
             ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST
           </div>
         </div>
@@ -163,10 +163,10 @@ export async function POST(req: NextRequest) {
       "Content-Type":  "application/json",
     },
     body: JSON.stringify({
-      from:    `Sastaghar Contact <${FROM_EMAIL}>`,
+      from:    `PropertyLink Contact <${FROM_EMAIL}>`,
       to:      [ADMIN_EMAIL],
       reply_to: email.trim(),        // clicking Reply goes to the visitor
-      subject: `New inquiry from ${name.trim()} — Sastaghar`,
+      subject: `New inquiry from ${name.trim()} — PropertyLink.com`,
       html:    emailHtml,
     }),
   });

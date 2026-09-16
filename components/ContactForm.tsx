@@ -198,7 +198,7 @@ export default function ContactForm() {
           >
             <Image
               src="/contact-image.png"
-              alt="Sastaghar team discussing properties"
+              alt="PropertyLink team discussing properties"
               fill
               className="object-cover"
               priority

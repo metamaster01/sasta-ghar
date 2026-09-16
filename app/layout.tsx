@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sastaghar – Find Your Perfect Home",
+  title: "PropertyLink – Find Your Perfect Home",
   description:
     "Buy, sell, and rent properties across India with verified listings and trusted agents.",
 };

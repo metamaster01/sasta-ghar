@@ -77,7 +77,7 @@ export default function AdvertisementSection() {
               Sell or Lease out your{" "}
               <span className="whitespace-nowrap">Plots/Land</span> faster
               <br />
-              with sastaghar
+              with PropertyLink
             </motion.h2>
 
             {/* Card block */}
@@ -103,7 +103,7 @@ export default function AdvertisementSection() {
                 className="pt-2"
               >
                 <Link
-                  href="/post-property"
+                  href="/agent/dashboard"
                   className="
                     inline-flex items-center gap-2
                     bg-[#1B4FD8] text-white

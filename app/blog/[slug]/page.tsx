@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post     = await getBlog(slug);
 
   if (!post) {
-    return { title: "Article Not Found — Sastaghar" };
+    return { title: "Article Not Found — PropertyLink" };
   }
 
   const ogImage = post.cover_image_url ?? "/og-image.png";
@@ -65,8 +65,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description: desc,
-      url:         `https://sastaghar.com/blog/${slug}`,
-      siteName:    "Sastaghar",
+      url:         `https://propertylink.com/blog/${slug}`,
+      siteName:    "PropertyLink",
       type:        "article",
       publishedTime: post.published_at ?? undefined,
       images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: desc,
       images:      [ogImage],
     },
-    alternates: { canonical: `https://sastaghar.com/blog/${slug}` },
+    alternates: { canonical: `https://propertylink.com/blog/${slug}` },
   };
 }
 
@@ -159,19 +159,19 @@ function ArticleSchema({ post }: { post: any }) {
     "image":          post.cover_image_url ?? "",
     "author": {
       "@type": "Person",
-      "name":  post.profiles?.full_name ?? "Sastaghar Team",
+      "name":  post.profiles?.full_name ?? "PropertyLink Team",
     },
     "publisher": {
       "@type": "Organization",
-      "name":  "Sastaghar",
+      "name":  "PropertyLink",
       "logo": {
         "@type": "ImageObject",
-        "url":   "https://sastaghar.com/logo.png",
+        "url":   "https://propertylink.com/logo-new.png",
       },
     },
     "datePublished": post.published_at,
     "dateModified":  post.updated_at ?? post.published_at,
-    "url":           `https://sastaghar.com/blog/${post.slug}`,
+    "url":           `https://propertylink.com/blog/${post.slug}`,
     "keywords":      (post.tags ?? []).join(", "),
   };
   return (
@@ -276,9 +276,9 @@ export default async function BlogDetailPage({ params }: Props) {
                   </div>
                   <div>
                     <p className="text-gray-800 text-sm font-semibold">
-                      {author.full_name ?? "Sastaghar Team"}
+                      {author.full_name ?? "PropertyLink Team"}
                     </p>
-                    <p className="text-gray-400 text-xs">Property Expert · Sastaghar</p>
+                    <p className="text-gray-400 text-xs">Property Expert · PropertyLink</p>
                   </div>
                 </div>
               )}
@@ -306,7 +306,7 @@ export default async function BlogDetailPage({ params }: Props) {
               )} */}
 
 
-              // ── Article content ─────────────────────────── 
+            
               <BlogContent content={post.content ?? ""} />
 
               {/* Tags */}
@@ -367,8 +367,8 @@ export default async function BlogDetailPage({ params }: Props) {
                       }
                     </div>
                     <div>
-                      <p className="text-gray-900 font-semibold text-sm">{author.full_name ?? "Sastaghar Team"}</p>
-                      <p className="text-gray-400 text-xs mb-1">Property Expert · Sastaghar</p>
+                      <p className="text-gray-900 font-semibold text-sm">{author.full_name ?? "PropertyLink Team"}</p>
+                      <p className="text-gray-400 text-xs mb-1">Property Expert · PropertyLink</p>
                       {authorBio && (
                         <p className="text-gray-500 text-xs leading-relaxed">{authorBio}</p>
                       )}

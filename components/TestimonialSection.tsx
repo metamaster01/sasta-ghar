@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     quote:
-      '"I found my apartment in just two days through sastaghar! The verified listings saved me so much time and effort. The process was smooth from start to finish."',
+      '"I found my apartment in just two days through PropertyLink! The verified listings saved me so much time and effort. The process was smooth from start to finish."',
     name: "Rohit Patel",
     location: "Pune",
     avatar: "/avatars/avatar-1.png",
@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     quote:
-      '"Sastaghar made buying our first home completely stress-free. The agent network is fantastic and every listing was exactly as described. Highly recommended!"',
+      '"PropertyLink made buying our first home completely stress-free. The agent network is fantastic and every listing was exactly as described. Highly recommended!"',
     name: "Priya Sharma",
     location: "Mumbai",
     avatar: "/avatars/avatar-1.png",
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
   {
     id: 5,
     quote:
-      '"Renting out my commercial space was so simple with sastaghar. The reach is incredible and the process is completely transparent from day one."',
+      '"Renting out my commercial space was so simple with PropertyLink. The reach is incredible and the process is completely transparent from day one."',
     name: "Vikram Singh",
     location: "Delhi",
     avatar: "/avatars/avatar-1.png",

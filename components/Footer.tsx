@@ -13,9 +13,9 @@ const companyLinks = [
 ];
 
 const exploreLinks = [
-  { label: "Buy Property", href: "/buy" },
-  { label: "Rent Property", href: "/rent" },
-  { label: "Commercial", href: "/commercial" },
+  { label: "Buy Property", href: "/search?category=buy" },
+  { label: "Rent Property", href: "/search?category=rent" },
+  { label: "Commercial", href: "/search?category=commercial" },
   { label: "Agents", href: "/agents" },
 ];
 
@@ -156,7 +156,7 @@ export default function Footer() {
               variants={fadeUp(0.2)}
             >
               <Link
-                href="/properties"
+                href="/search"
                 className="
                   inline-flex items-center gap-2
                   bg-white text-gray-900
@@ -201,8 +201,8 @@ export default function Footer() {
             >
               {/* Logo */}
               <Link href="/" className="inline-flex items-baseline gap-0 mb-5">
-                <span className="text-2xl font-bold text-gray-900 tracking-tight">Sasta</span>
-                <span className="text-2xl font-bold text-[#1B4FD8] tracking-tight">ghar</span>
+                <span className="text-2xl font-bold text-gray-900 tracking-tight">Property</span>
+                <span className="text-2xl font-bold text-[#1B4FD8] tracking-tight">Link</span>
               </Link>
 
               {/* Social */}
@@ -311,13 +311,15 @@ export default function Footer() {
           <div className="border-t border-gray-200 pt-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <p className="text-gray-400 text-xs">
-                ABC Company @ 2025. All rights Reserved.
+          <a href="https://www.metamaster.in" target="_blank" rel="noopener noreferrer">
+            Meta Master
+          </a> @ 2025. All rights Reserved.
               </p>
               <Link
-                href="mailto:support@Company.com"
+                href="mailto:support@metamaster.in"
                 className="text-gray-400 text-xs hover:text-[#1B4FD8] transition-colors duration-200"
               >
-                support@Company.com
+                support@metamaster.in
               </Link>
             </div>
           </div>
