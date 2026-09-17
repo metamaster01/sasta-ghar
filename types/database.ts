@@ -1004,6 +1004,42 @@ export type Database = {
           },
         ]
       }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          source: string | null
+          status: string
+          unsubscribe_token: string
+          updated_at: string
+          welcome_email_attempts: number
+          welcome_email_sent: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          source?: string | null
+          status?: string
+          unsubscribe_token?: string
+          updated_at?: string
+          welcome_email_attempts?: number
+          welcome_email_sent?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          source?: string | null
+          status?: string
+          unsubscribe_token?: string
+          updated_at?: string
+          welcome_email_attempts?: number
+          welcome_email_sent?: boolean
+        }
+        Relationships: []
+      }
       notifications: {
         Row: {
           action_label: string | null

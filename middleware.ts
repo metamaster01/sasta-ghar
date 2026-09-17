@@ -464,10 +464,10 @@ export async function middleware(request: NextRequest) {
   //            directly (handled in Navbar, not middleware).
   // Middleware just ensures non-agents can't access the listing form.
   // ================================================================
-  if (path.startsWith("/post-property") || path.startsWith("/edit-property")) {
+  if (path.startsWith("/agent/listings/new") || path.startsWith("/edit-property")) {
     if (!user) {
       return NextResponse.redirect(
-        new URL(`/login?redirect=/post-property`, request.url)
+        new URL(`/login?redirect=/agent/listings/new`, request.url)
       );
     }
     // Agent with complete onboarding → allow

@@ -9,7 +9,7 @@ const companyLinks = [
   { label: "About us", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "Terms & conditions", href: "/terms" },
-  { label: "Privacy policy", href: "/privacy" },
+  { label: "Privacy policy", href: "/privacy-policy" },
 ];
 
 const exploreLinks = [
@@ -22,8 +22,8 @@ const exploreLinks = [
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
   { label: "FAQs", href: "/faqs" },
-  { label: "Guides", href: "/guides" },
-  { label: "Price Trends", href: "/price-trends" },
+  { label: "Guides", href: "/faqs#guides" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 const socialLinks = [
@@ -138,7 +138,7 @@ export default function Footer() {
               <br />
               Home with
               <br />
-              Sastaghar
+              PropertyLink Reality
             </motion.h2>
 
             {/* Description */}
@@ -185,7 +185,7 @@ export default function Footer() {
 
       {/* ── Main Footer ──────────────────────────────────────────── */}
       <div className="w-full bg-[#F5F5F5]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
           <motion.div
             ref={footerRef}
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-8 mb-12"
@@ -200,9 +200,24 @@ export default function Footer() {
               variants={fadeUp(0)}
             >
               {/* Logo */}
-              <Link href="/" className="inline-flex items-baseline gap-0 mb-5">
-                <span className="text-2xl font-bold text-gray-900 tracking-tight">Property</span>
-                <span className="text-2xl font-bold text-[#1B4FD8] tracking-tight">Link</span>
+              <Link href="/" className="inline-flex items-center gap-1 mb-5">
+                <Image
+                  src="/logo-circle.png"
+                  alt="PropertyLink Realty logo"
+                  width={54}
+                  height={54}
+                  className="shrink-0"
+                />
+                <span className="flex flex-col leading-none">
+                  <span>
+                    <span className="text-2xl font-bold text-gray-900 tracking-tight">Property</span>
+                    <span className="text-2xl font-bold text-[#1B4FD8] tracking-tight">Link</span>
+                  </span>
+                  <hr className="w-full my-1 border-0 border-t border-gray-300" />
+                  <span className="text-center text-[12px] font-semibold uppercase tracking-[0.24em] text-gray-500">
+                    Realty
+                  </span>
+                </span>
               </Link>
 
               {/* Social */}

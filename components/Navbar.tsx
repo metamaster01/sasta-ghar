@@ -2972,7 +2972,7 @@ export default function Navbar() {
   function handlePostProperty(e: React.MouseEvent) {
     e.preventDefault();
     if (!authUser) {
-      router.push("/login?redirect=/post-property");
+      router.push("/login?redirect=/agent/listings/new");
       return;
     }
     const isAgent = authUser.role === "agent" || authUser.role === "builder";

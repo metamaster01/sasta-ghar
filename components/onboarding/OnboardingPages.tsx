@@ -623,7 +623,7 @@ export function OnboardingCompletePage() {
         <div className="flex flex-col gap-3">
           <motion.button
             whileTap={{ scale: 0.98 }}
-            onClick={() => router.push("/post-property")}
+            onClick={() => router.push("/agent/listings/new")}
             className="w-full bg-[#1B4FD8] hover:bg-[#1640b8] text-white font-semibold text-sm py-4 rounded-xl transition-colors"
           >
             Post Your First Property
