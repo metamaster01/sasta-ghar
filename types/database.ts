@@ -14,6 +14,79 @@ export type Database = {
   }
   public: {
     Tables: {
+      agent_documents: {
+        Row: {
+          agent_profile_id: string
+          created_at: string
+          doc_type: string
+          file_name: string
+          file_path: string
+          file_size: number | null
+          file_type: string | null
+          file_url: string
+          id: string
+          rejection_reason: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          agent_profile_id: string
+          created_at?: string
+          doc_type: string
+          file_name: string
+          file_path: string
+          file_size?: number | null
+          file_type?: string | null
+          file_url: string
+          id?: string
+          rejection_reason?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          agent_profile_id?: string
+          created_at?: string
+          doc_type?: string
+          file_name?: string
+          file_path?: string
+          file_size?: number | null
+          file_type?: string | null
+          file_url?: string
+          id?: string
+          rejection_reason?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "agent_documents_agent_profile_id_fkey"
+            columns: ["agent_profile_id"]
+            isOneToOne: false
+            referencedRelation: "admin_agent_performance"
+            referencedColumns: ["agent_profile_id"]
+          },
+          {
+            foreignKeyName: "agent_documents_agent_profile_id_fkey"
+            columns: ["agent_profile_id"]
+            isOneToOne: false
+            referencedRelation: "agent_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "agent_documents_reviewed_by_fkey"
+            columns: ["reviewed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       agent_profiles: {
         Row: {
           active_listings: number
